@@ -9,6 +9,7 @@ RUN yarn build
 
 # FROM starts a new phase (PROD)
 FROM nginx
+EXPOSE 80
 # COPY the build folder from the builder phase
 COPY --from=builder /app/build /usr/share/nginx/html
 # START nginx is done by container as the default command
